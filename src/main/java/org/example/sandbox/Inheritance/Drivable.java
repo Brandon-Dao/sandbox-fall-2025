@@ -1,6 +1,5 @@
 package org.example.sandbox.Inheritance;
 
-
 public interface Drivable {
 
     int MAX_SPEED = 120; // in km/h

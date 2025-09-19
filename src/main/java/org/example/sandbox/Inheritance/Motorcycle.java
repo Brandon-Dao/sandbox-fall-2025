@@ -1,6 +1,4 @@
 package org.example.sandbox.Inheritance;
-
-
 public class Motorcycle extends Vehicle {
 
     private boolean hasSidecar;

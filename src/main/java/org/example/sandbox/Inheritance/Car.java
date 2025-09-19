@@ -1,12 +1,15 @@
 package org.example.sandbox.Inheritance;
 
+
 public class Car extends Vehicle {
 
     private int doors;
+    private Engine engine;
 
     public Car(String brand, String model, int year, double fuelCapacity, int doors, double mpg) {
         super(brand, model, year, fuelCapacity, mpg);
         this.doors = doors;
+        this.engine = new Engine("V6", 301); // Example engine composition
     }
 
     @Override
@@ -37,5 +40,9 @@ public class Car extends Vehicle {
 
     public int getDoors() {
         return doors;
+    }
+
+    public void showEngineSpecs() {
+        engine.displaySpecs();
     }
 }

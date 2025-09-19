@@ -1,67 +1,51 @@
 package org.example.sandbox.Inheritance;
 
-public class Helicopter extends Vehicle implements Flyable{
+public class Helicopter extends Vehicle implements Flyable {
 
     private int rotorCount;
-    private double mpg;
 
-    public Helicopter(String brand, String model, int year, double fuelCapacity, double mpg, double v) {
-        super(brand, model, year, fuelCapacity,mpg);
-
-    }
-
-    @Override
-    public double getMaxAltitude() {
-        return 15000.0;
-    }
-
-    @Override
-    public void land() {
-        System.out.println(" Helicoper landing");
-    }
-
-    @Override
-    public void takeOff() {
-        System.out.println(" Helicoper taking off");
-    }
-
-    @Override
-    public void honk() {
-        super.honk();
-    }
-
-    @Override
-    public double getMaxSpeed() {
-        return 0;
-    }
-
-    @Override
-    public void stop() {
-    System.out.println(" Helicoper stop");
+    public Helicopter(String brand,
+                      String model,
+                      int year,
+                      double fuelCapacity,
+                      int rotorCount,
+                      double mpg) {
+        super(brand, model, year, fuelCapacity, mpg);
+        this.rotorCount = rotorCount;
     }
 
     @Override
     public void start() {
-        System.out.println(" Helicoper starts");
+        System.out.println("Helicopter rotors spinning up!");
     }
 
     @Override
-    public void refuel() {
-        System.out.println(" Helicoper refueling");
+    public void stop() {
+        System.out.println("Helicopter rotors shutting down.");
     }
-
 
     @Override
-    public String getModel() {
-        return super.getModel();
+    public double getMaxSpeed() {
+        return 160.0; // Helicopters have a max speed of around 160 mph
     }
 
-
+    // Flyable interface methods
+    @Override
+    public void takeOff() {
+        System.out.println("Helicopter taking off!");
+    }
 
     @Override
-    public void displayInfo() {
-        super.displayInfo();
+    public void land() {
+        System.out.println("Helicopter landing.");
     }
 
+    @Override
+    public double getMaxAltitude() {
+        return 15000.0; // Max altitude in feet
+    }
 
+    public void hover() {
+        System.out.println("Helicopter is hovering in place.");
+    }
 }
